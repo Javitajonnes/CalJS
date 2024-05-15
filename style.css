@@ -8,10 +8,10 @@ body {
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
-  margin: 0;
-  padding: 20px;
+  margin: 20px;
+  padding: 40px;
   box-sizing: border-box;
 }
 
@@ -32,14 +32,14 @@ h1 {
 }
 
 label, button {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 input {
   padding: 5px;
   margin: 5px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   background-color: #fff7d1;
   color: #2f4f9e;
   font-family: inherit;
@@ -51,7 +51,7 @@ button {
   background-color: #ffd47e; /* Amarillo */
   color: #2f4f9e;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -60,4 +60,66 @@ button {
 
 button:hover {
   background-color: #ffb347; /* Amarillo oscuro */
+}
+
+.glitch-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.glitch {
+  position: relative;
+  font-size: 44px;
+  font-weight: bold;
+  color: #FFFFFF;
+  letter-spacing: 3px;
+  z-index: 1;
+}
+
+.glitch:before,
+.glitch:after {
+  display: block;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+.glitch:before {
+  animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  color: #1943FF;
+  z-index: -1;
+}
+
+.glitch:after {
+  animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+  color: #FFFE4E;
+  z-index: -2;
+}
+
+@keyframes glitch-it {
+  0% {
+     transform: translate(0);
+  }
+  20% {
+     transform: translate(-2px, 2px);
+  }
+  40% {
+     transform: translate(-2px, -2px);
+  }
+  60% {
+     transform: translate(2px, 2px);
+  }
+  80% {
+     transform: translate(2px, -2px);
+  }
+  to {
+     transform: translate(0);
+  }
 }

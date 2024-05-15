@@ -1,29 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conversor de Divisas</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>Conversor de Divisas</h1>
-  <label for="dolarInput">Valor en dólares:</label>
-  <input type="number" id="dolarInput" step="0.01">
-  <br><br>
-  <label for="tasaInput">Tasa de cambio (USD a CLP):</label>
-  <input type="number" id="tasaInput" step="0.01">
-  <br><br>
-  <button onclick="convertir()">Convertir</button>
-  <br><br>
-  <label for="resultadoInput">Valor en pesos chilenos:</label>
-  <input type="number" id="resultadoInput" disabled>
+  <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div style="container">
+      <div class="glitch-wrapper">
+        <div class="glitch" data-text="Dolar a pesos">Dolar a pesos</div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <label for="dolarInput">Valor en dólares:</label>
+      <input type="number" id="dolarInput" step="0.01" />
+      <br /><br />
+      <label for="tasaInput">Tasa de cambio (USD a CLP):</label>
+      <input type="number" id="tasaInput" step="0.01" />
+      <br /><br />
+      <button onclick="convertir()">Convertir</button>
+      <br /><br />
+      <label for="resultadoInput">Valor en pesos chilenos:</label>
+      <input type="number" id="resultadoInput" disabled />
 
-  <script>
-    function convertir() {
-      const dolarInput = document.getElementById("dolarInput").value;
-      const tasaInput = document.getElementById("tasaInput").value;
-      const resultado = dolarInput * tasaInput;
-      document.getElementById("resultadoInput").value = resultado;
-    }
-  </script>
-</body>
+      <script>
+        function convertir() {
+          const dolarInput = document.getElementById("dolarInput").value;
+          const tasaInput = document.getElementById("tasaInput").value;
+          const resultado = dolarInput * tasaInput;
+          document.getElementById("resultadoInput").value = resultado;
+        }
+      </script>
+    </div>
+  </body>
 </html>
